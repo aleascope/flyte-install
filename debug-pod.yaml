@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: debug-pod
+  namespace: flyte
+spec:
+  serviceAccountName: flyte-binary
+  containers:
+  - name: debug-container
+    image: google/cloud-sdk:latest
+    command: ["sleep", "3600"]
