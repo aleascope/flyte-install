@@ -69,13 +69,13 @@ configuration:
       customData:
       - production:
         - defaultIamServiceAccount:
-            value: <SA_EMAIL>
+            value: <SA_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
       - staging:
         - defaultIamServiceAccount:
-            value: <SA_EMAIL>
+            value: <SA_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
       - development:
         - defaultIamServiceAccount:
-            value: <SA_EMAIL>
+            value: <SA_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
     plugins:
       k8s:
         inject-finalizer: true
@@ -131,7 +131,7 @@ serviceAccount:
   create: true
   #Automates annotation of default flyte-binary KSA. Make sure to bind the KSA to the GSA: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity#authenticating_to
   annotations:
-    iam.gke.io/gcp-service-account: <SA_EMAIL>
+    iam.gke.io/gcp-service-account: <SA_NAME>@<PROJECT_ID>.iam.gserviceaccount.com
 # rbac Configure Kubernetes RBAC for Flyte
 rbac:
   # create Create ClusterRole and ClusterRoleBinding resources
