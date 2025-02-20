@@ -7,7 +7,7 @@ metadata:
     cloud.google.com/load-balancer-type: "Internal"  # Ensures it's an internal LB
 spec:
   type: LoadBalancer
-  loadBalancerIP: 10.132.0.6  # Choose a private IP from your VPC
+  loadBalancerIP: <PRIVATE_VPC_IP>
   selector:
     app.kubernetes.io/name: flyte-binary
   ports:
