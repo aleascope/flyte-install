@@ -302,6 +302,8 @@ grpcurl -plaintext -d '{}' localhost:8089 flyteidl.service.AdminService.ListProj
 
 ### Sending tasks and workflows definitions to Flyte backend
 
+#### Simple project without custom dependencies
+
 Once your Flyte load-balancer is setup and the 8088 (REST) and 8089 (gRPC) traffic is forwarded to your machine you can start posting workflow to the backend and visualize them in the console.
 
 First we can check the Flyte tasks and workflows are correctly defined by attempting to serialize the code:
@@ -314,3 +316,9 @@ Then the registration to the admin backend is done with command "pyflyte registe
 pyflyte --config=config.yaml register --project flytesnacks --domain development --version v1 workflows/wf1.py
 ```
 Note the connextion details in the config.yaml file.
+
+#### Projects with custom Docker images
+
+```sh
+pyflyte --config=config.yaml register --project flytesnacks --domain development --version v1 --image=project_dkr/image.yaml project_dkr
+```
