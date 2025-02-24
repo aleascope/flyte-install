@@ -322,7 +322,8 @@ Note the connextion details in the config.yaml file.
 ##### Local build
 
 The official documentation is here:
-- https://flyte-next.readthedocs.io/en/latest/flytesnacks/examples/customizing_dependencies/image_spec.html
+- [https://flyte-next.readthedocs.io/en/latest/flytesnacks/examples/customizing_dependencies/image_spec.html](https://docs.flyte.org/en/latest/user_guide/customizing_dependencies/imagespec.html)
+
 One of the confusing points to note about this feature is that you need to be running Docker locally for the image to be built.
 If not the registration will still proceed by assuming the image is build already.
 
@@ -333,5 +334,6 @@ pyflyte --config=config.yaml register --project flytesnacks --domain development
 ##### Remote Docker build
 
 The documentation also covers this approach to build the image locally:
+- https://flyte-next.readthedocs.io/en/latest/flytesnacks/examples/customizing_dependencies/image_spec.html (search "build the image on remote machine")
 - https://envd.tensorchord.ai/teams/context.html#start-remote-buildkitd-on-builder-machine
 However I did not investigate it.
