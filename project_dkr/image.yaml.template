@@ -1,0 +1,7 @@
+# imageSpec.yaml
+python_version: 3.11
+registry: "europe-docker.pkg.dev/${{PROJECT_ID}}/${{DOCKER_REPO_ID}}"
+packages:
+  - pandas
+env:
+  Debug: "True"
